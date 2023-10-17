@@ -1,0 +1,47 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-content: $align;
+}
+@mixin grid($columns, $rows, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+}
+@mixin text($align, $size, $weight, $color) {
+  text-align: $align;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin list($padding, $margin) {
+  list-style: none;
+  padding: $padding;
+  margin: $margin;
+}
+@mixin colors($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
+
+.Navbar {
+  @include size(100vh, 4rem);
+  @include flex(row, center, center);
+  @include colors(#fff, #000);
+
+  ul {
+    @include size(100%, 100%);
+    @include flex(row, space-around, center);
+    margin: 0;
+    padding: 0;
+    li {
+      @include list(auto, 0);
+    }
+  }
+}
