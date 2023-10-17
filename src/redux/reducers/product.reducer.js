@@ -1,5 +1,5 @@
 import { GET_PRODUCTS } from "../actions/product.action";
-const initialState = {};
+const initialState = [];
 
 export default function productsReducer(state = initialState, action) {
   switch (action.type) {

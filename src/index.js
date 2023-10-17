@@ -11,10 +11,8 @@ import rootReducer from "./redux/reducers/index";
 import { getProducts } from "./redux/actions/product.action";
 
 const store = configureStore({
-  reducer: {
-    reducer: rootReducer,
-    devTools: true,
-  },
+  reducer: rootReducer,
+  devTools: true,
 });
 
 const root = document.getElementById("root");

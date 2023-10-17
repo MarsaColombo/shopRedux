@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
 import { useSelector } from "react-redux";
-import PostForm from "./components/PostForm";
+import ProductForm from "./components/ProductForm";
 import { isEmpty } from "./components/Utils";
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <PostForm />
+      <ProductForm />
       <div>
         {!isEmpty(products) &&
           products.map((product, index) => (

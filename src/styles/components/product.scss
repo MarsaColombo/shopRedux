@@ -20,31 +20,3 @@
   font-weight: $weight;
   color: $color;
 }
-
-#hero {
-  @include size(100vh, auto);
-  @include flex(column, center, center);
-  h1 {
-    @include size(100%, 20%);
-    @include text(center, 3rem, 700, black);
-  }
-  .row {
-    @include size(100%, 80%);
-    @include grid(2, 1, 2rem);
-    .card {
-      .cardMedia {
-        @include size(100%, 10rem);
-      }
-      .CardContent {
-        @include size(100%, 10rem);
-        @include flex(column, center, center);
-        text-align: center;
-        padding: 2px;
-        gap: 0.25em;
-        h3 {
-          @include text(center, 0.75rem, 700, black);
-        }
-      }
-    }
-  }
-}
