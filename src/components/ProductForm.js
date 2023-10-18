@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../redux/actions/product.action";
+import { addProduct, getProducts } from "../redux/actions/product.action";
 
 const ProductForm = () => {
   const form = useRef();
@@ -17,7 +17,9 @@ const ProductForm = () => {
       salePrice: form.current[4].value,
       imageUrl: form.current[5].value,
     };
-    dispatch(addProduct(productData));
+    await dispatch(addProduct(productData));
+    dispatch(getProducts());
+    form.current.reset();
   };
 
   return (

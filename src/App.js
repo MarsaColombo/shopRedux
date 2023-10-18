@@ -6,18 +6,20 @@ import { isEmpty } from "./components/Utils";
 
 const App = () => {
   const products = useSelector((state) => state.productsReducer);
-  console.log(products);
 
   return (
     <div className="App">
       <Navbar />
-      <ProductForm />
-      <div>
-        {!isEmpty(products) &&
-          products.map((product, index) => (
-            <Product product={product} key={index} />
-          ))}
+
+      <div className="productContainer">
+        <div className="productsContent">
+          {!isEmpty(products) &&
+            products.map((product, index) => (
+              <Product className="produit" product={product} key={index} />
+            ))}
+        </div>
       </div>
+      <ProductForm />
     </div>
   );
 };
