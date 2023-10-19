@@ -41,6 +41,7 @@
 .card {
   padding: 1rem;
   text-align: center;
+
   .edit-delete {
     @include size(100%, auto);
     @include flex(row, space-around, center);

@@ -1,0 +1,36 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-content: $align;
+}
+@mixin grid($columns, $rows, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+}
+@mixin text($align, $size, $weight, $color) {
+  text-align: $align;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin grid($repeat, $gap) {
+  display: grid;
+  grid-template-columns: repeat($repeat, 1fr);
+  grid-gap: $gap;
+  place-content: center;
+}
+
+.form-container {
+  form {
+    @include size(100%, 100%);
+    @include flex(row, center, center);
+    border: 1px solid #ccc;
+  }
+}

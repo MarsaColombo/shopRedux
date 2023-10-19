@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct, getProducts } from "../redux/actions/product.action";
 
+// SCSS
+import "../styles/index.scss";
+
 const ProductForm = () => {
   const form = useRef();
   const dispatch = useDispatch();

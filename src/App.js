@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 import ProductForm from "./components/ProductForm";
 import { isEmpty } from "./components/Utils";
 
+// scss
+import "./styles/index.scss";
+
 const App = () => {
   const products = useSelector((state) => state.productsReducer);
 
