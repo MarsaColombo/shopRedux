@@ -1,8 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-// SASS
-import "./styles/index.scss";
+// Tailwind
+import "./index.css";
 
 // Redux
 import { Provider } from "react-redux";

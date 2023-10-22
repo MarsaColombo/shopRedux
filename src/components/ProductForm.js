@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { addProduct, getProducts } from "../redux/actions/product.action";
 
 // SCSS
-import "../styles/index.scss";
 
 const ProductForm = () => {
   const form = useRef();
@@ -26,14 +25,41 @@ const ProductForm = () => {
   };
 
   return (
-    <div className="form-container">
-      <form ref={form} onSubmit={(e) => handleForm(e)}>
-        <input type="text" placeholder="Titre du poste" />
-        <textarea placeholder="Description" />
-        <input type="text" placeholder="Catégorie" />
-        <input type="text" placeholder="Prix de base" />
-        <input type="text" placeholder="Prix de vente" />
-        <input type="file" accept="image/*" />
+    <div className="h-full w-full p-5">
+      <form
+        ref={form}
+        onSubmit={(e) => handleForm(e)}
+        className=" w-full flex flex-col justify-center items-center gap-4 m-auto"
+      >
+        <input
+          type="text"
+          class="input input-bordered w-full max-w-xs"
+          placeholder="Titre du poste"
+        />
+        <textarea
+          class="textarea textarea-bordered"
+          placeholder="Description"
+        />
+        <input
+          class="input input-bordered w-full max-w-xs"
+          type="text"
+          placeholder="Catégorie"
+        />
+        <input
+          class="input input-bordered w-full max-w-xs"
+          type="text"
+          placeholder="Prix de base"
+        />
+        <input
+          class="input input-bordered w-full max-w-xs"
+          type="text"
+          placeholder="Prix de vente"
+        />
+        <input
+          class="file-input file-input-bordered w-full max-w-xs"
+          type="file"
+          accept="image/*"
+        />
         <input type="submit" />
       </form>
     </div>
