@@ -3,6 +3,7 @@ import Product from "./components/Product";
 import { useSelector } from "react-redux";
 import ProductForm from "./components/ProductForm";
 import { isEmpty } from "./components/Utils";
+import FilteredProducts from "./components/FilteredProducts";
 
 // Router
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -13,10 +14,10 @@ const App = () => {
   const products = useSelector((state) => state.productsReducer);
 
   return (
-    <div className="w-full h-full">
-      <Navbar />
+    <BrowserRouter>
+      <div className="w-full h-full">
+        <Navbar />
 
-      <BrowserRouter>
         <Routes>
           <Route
             path="/"
@@ -34,9 +35,13 @@ const App = () => {
               </>
             }
           />
+          <Route
+            path="/filteredProducts/:categories"
+            element={<FilteredProducts />}
+          />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 };
 

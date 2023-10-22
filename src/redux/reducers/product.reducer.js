@@ -3,6 +3,7 @@ import {
   EDIT_PRODUCT,
   GET_PRODUCTS,
   DELETE_PRODUCT,
+  FILTER_PRODUCTS,
 } from "../actions/product.action";
 const initialState = [];
 
@@ -25,6 +26,8 @@ export default function productsReducer(state = initialState, action) {
       });
     case DELETE_PRODUCT:
       return state.filter((product) => product.id !== action.payload);
+    case FILTER_PRODUCTS:
+      return action.payload;
     default:
       return state;
   }

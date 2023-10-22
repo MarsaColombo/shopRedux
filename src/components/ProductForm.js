@@ -33,30 +33,30 @@ const ProductForm = () => {
       >
         <input
           type="text"
-          class="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-xs"
           placeholder="Titre du poste"
         />
         <textarea
-          class="textarea textarea-bordered"
+          className="textarea textarea-bordered"
           placeholder="Description"
         />
         <input
-          class="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-xs"
           type="text"
           placeholder="Catégorie"
         />
         <input
-          class="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-xs"
           type="text"
           placeholder="Prix de base"
         />
         <input
-          class="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-xs"
           type="text"
           placeholder="Prix de vente"
         />
         <input
-          class="file-input file-input-bordered w-full max-w-xs"
+          className="file-input file-input-bordered w-full max-w-xs"
           type="file"
           accept="image/*"
         />

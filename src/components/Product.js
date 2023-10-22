@@ -61,7 +61,7 @@ const Product = ({ product }) => {
       {editToggle ? (
         <form
           onSubmit={(e) => handleEdit(e)}
-          class="h-3/4 flex flex-col justify-around text-center content-center items-center gap-2"
+          className="h-3/4 flex flex-col justify-around text-center content-center items-center gap-2"
         >
           <textarea
             autoFocus={true}
@@ -69,32 +69,32 @@ const Product = ({ product }) => {
             onChange={(e) => setEditTitle(e.target.value)}
           ></textarea>
           <textarea
-            class="textarea"
+            className="textarea"
             autoFocus={true}
             value={editDescription}
             onChange={(e) => setEditDescription(e.target.value)}
           ></textarea>
           <textarea
-            class="textarea"
+            className="textarea"
             autoFocus={true}
             value={editCategories}
             onChange={(e) => setEditCategories(e.target.value)}
           ></textarea>
           <textarea
-            class="textarea"
+            className="textarea"
             autoFocus={true}
             value={editBasePrice}
             onChange={(e) => setEditBasePrice(e.target.value)}
           ></textarea>
           <textarea
-            class="textarea"
+            className="textarea"
             autoFocus={true}
             value={editSalePrice}
             onChange={(e) => setEditSalePrice(e.target.value)}
           ></textarea>
 
           <input
-            class="file-input w-full max-w-xs"
+            className="file-input w-full max-w-xs"
             type="file"
             accept="image/*"
             autoFocus={true}
