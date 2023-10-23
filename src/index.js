@@ -22,6 +22,6 @@ store.dispatch(getProducts());
 const appRoot = createRoot(root);
 appRoot.render(
   <Provider store={store}>
-    <App />
+    <App  />
   </Provider>
 );

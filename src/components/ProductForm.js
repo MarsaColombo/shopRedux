@@ -37,7 +37,7 @@ const ProductForm = () => {
           placeholder="Titre du poste"
         />
         <textarea
-          className="textarea textarea-bordered"
+          className="textarea textarea-bordered w-full max-w-xs"
           placeholder="Description"
         />
         <input
@@ -60,7 +60,7 @@ const ProductForm = () => {
           type="file"
           accept="image/*"
         />
-        <input type="submit" />
+        <input className="btn" type="submit" />
       </form>
     </div>
   );

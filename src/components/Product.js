@@ -39,8 +39,8 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className=" card h-auto w-[20rem] bg-base-100 shadow-xl">
-      <div className="btn-group flex justify-around items-center m-2">
+    <div className=" card h-auto  w-[20rem] sm:w-[15rem] bg-base-100 shadow-xl p-5 border-2">
+      <div className="btn-group flex justify-around items-center my-2">
         <DeleteIcon
           className="glass rounded-lg "
           onClick={() => dispatch(deleteProduct(product.id))}
@@ -52,7 +52,7 @@ const Product = ({ product }) => {
       </div>
 
       <CardMedia
-        className="h1/4 w-1/4"
+        className="h-1/3 sm:h-1/6 w-1/4 sm:w-1/6 rounded-lg"
         component="img"
         image={product.imageUrl}
         alt=""
@@ -103,7 +103,7 @@ const Product = ({ product }) => {
           <input type="submit" value="Valider modification" />
         </form>
       ) : (
-        <CardContent className="card-body items-center text-center">
+        <CardContent className="card-body items-center text-center h-12 font-light text-xs">
           <p className="card-title">{product.title}</p>
           <p>{product.description}</p>
           <p>{product.categories}</p>
