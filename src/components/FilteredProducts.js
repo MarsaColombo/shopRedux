@@ -1,8 +1,15 @@
 import React from "react";
+
+// React-redux
 import { useSelector } from "react-redux";
+
+// Utils
 import { isEmpty } from "./Utils";
+
+// Components
 import Product from "./Product";
 import ProductForm from "./ProductForm";
+
 const FilteredProducts = () => {
   const products = useSelector((state) => state.productsReducer);
 

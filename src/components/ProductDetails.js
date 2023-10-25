@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const ProductDetails = () => {
+  // Product Reducer
   const product = useSelector((state) => state.productReducer);
-  console.log(product);
+
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex lg:flex-row">

@@ -34,6 +34,7 @@ const Product = ({ product }) => {
 
   const dispatch = useDispatch();
 
+  // Handle edit
   const handleEdit = (e) => {
     e.preventDefault();
     const productData = {
@@ -45,12 +46,14 @@ const Product = ({ product }) => {
       imageUrl: editImageUrl,
       id: product.id,
     };
+
     dispatch(editProduct(productData));
     dispatch(getProducts());
     setEditToogle(false);
   };
 
   return (
+    // Produi
     <div className=" card h-auto  w-[20rem] sm:w-[15rem] bg-base-100 shadow-xl p-4 border-2">
       <div className="btn-group flex justify-around items-center my-2">
         <DeleteIcon
@@ -70,6 +73,7 @@ const Product = ({ product }) => {
         alt=""
       />
 
+      {/* Form */}
       {editToggle ? (
         <form
           onSubmit={(e) => handleEdit(e)}
@@ -116,6 +120,7 @@ const Product = ({ product }) => {
           <input className="btn" type="submit" value="Valider modification" />
         </form>
       ) : (
+        // Product Content
         <CardContent className="card-body h-[10rem] flex justify-around items-center text-center  font-light text-xs my-5">
           <h1 className="card-title">{product.title}</h1>
           <h3 className="font-bold">{product.description}</h3>

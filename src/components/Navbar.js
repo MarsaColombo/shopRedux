@@ -20,8 +20,7 @@ const Navbar = () => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
 
-  // Dropdown
-
+  // Dropdown menu
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -73,6 +72,7 @@ const Navbar = () => {
             />
           </svg>
         </label>
+        {/* Map Buttons */}
         {isOpen && (
           <>
             {buttons.map((button, index) => {
