@@ -8,10 +8,25 @@ import FilteredProducts from "./components/FilteredProducts";
 // Router
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ProductDetails from "./components/ProductDetails";
-// scss
+// Redux
 
 const App = () => {
   const products = useSelector((state) => state.productsReducer);
+  const mainPage = () => {
+    return (
+      <>
+        <div className="flex justify-center items-center w-auto m-auto ">
+          <div className=" grid grid-cols-2 justify-items-center gap-5">
+            {!isEmpty(products) &&
+              products.map((product, index) => (
+                <Product product={product} key={index} />
+              ))}
+          </div>
+        </div>
+        <ProductForm className="h-screen w-screen" />
+      </>
+    );
+  };
 
   return (
     <BrowserRouter>
@@ -19,25 +34,10 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <div className="flex justify-center items-center w-auto m-auto ">
-                  <div className=" grid grid-cols-2 justify-items-center gap-5">
-                    {!isEmpty(products) &&
-                      products.map((product, index) => (
-                        <Product product={product} key={index} />
-                      ))}
-                  </div>
-                </div>
-                <ProductForm className="h-screen w-screen" />
-              </>
-            }
-          />
+          <Route path="/" element={mainPage()} />
           <Route
             path="/filteredProducts/:categories"
-            element={<FilteredProducts />}
+            element={<FilteredProducts categories={"categories"} />}
           />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>

@@ -11,7 +11,11 @@ import Product from "./Product";
 import ProductForm from "./ProductForm";
 
 const FilteredProducts = () => {
-  const products = useSelector((state) => state.productsReducer);
+  const category = useSelector((state) => state.filterReducer);
+  const allProducts = useSelector((state) => state.productsReducer);
+  const products = allProducts.filter((product) =>
+    product.categories.includes(category)
+  );
 
   return (
     <>

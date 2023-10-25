@@ -1,16 +1,13 @@
 import React from "react";
 import { GiShop } from "react-icons/gi";
 import { useDispatch } from "react-redux";
-import { filterProducts } from "../redux/actions/product.action";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { filterProducts } from "../redux/actions/product.action";
 const Navbar = () => {
   const buttons = ["Hommes", "Femmes", "Enfants", "Ados", "Bébés"];
   const dispatch = useDispatch();
 
-  const handleButtonClick = (button) => {
-    dispatch(filterProducts(button));
-  };
   // Theme switcher
   const [theme, setTheme] = useState("winter");
   const toggleTheme = () => {
@@ -81,7 +78,7 @@ const Navbar = () => {
                   <Link to={"/filteredProducts/" + button}>
                     <button
                       className="btn btn-active btn-neutral"
-                      onClick={() => handleButtonClick(button)}
+                      onClick={() => dispatch(filterProducts(button))}
                     >
                       {button}
                     </button>

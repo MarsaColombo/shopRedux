@@ -3,27 +3,30 @@ import { useSelector } from "react-redux";
 
 const ProductDetails = () => {
   // Product Reducer
-  const product = useSelector((state) => state.productReducer);
+  const prodId = useSelector((state) => state.filterReducer);
+  const products = useSelector((state) => state.productsReducer);
+  const product = products.find((product) => product.id === prodId);
+  console.log(product);
 
   return (
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex lg:flex-row">
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex lg:flex-row">
         <img
           src={product.imageUrl}
-          class="max-w-sm rounded-lg shadow-2xl"
+          className="max-w-sm rounded-lg shadow-2xl"
           alt={product.title}
         />
-        <div className="px-4">
-          <h1 class="text-5xl font-bold underline">{product.title}</h1>
-          <h3 class="py-6 font-semibold">{product.description}</h3>
-          <h6 class="py-6 font-medium">{product.categories}</h6>
+        <div className="px-4 md:text-center">
+          <h1 className="text-5xl font-bold underline">{product.title}</h1>
+          <h3 className="py-6 font-semibold">{product.description}</h3>
+          <h6 className="py-6 font-medium">{product.categories}</h6>
           <div className="py-6 flex justify-around items-center">
-            <p class=" font-medium text-lg">Prix :</p>
-            <p class=" font-light">
+            <p className=" font-medium text-lg">Prix :</p>
+            <p className=" font-light">
               {" "}
               <s>{product.basePrice} &euro;</s>
             </p>
-            <p class=" font-bold text-xl">{product.salePrice} &euro;</p>
+            <p className=" font-bold text-xl">{product.salePrice} &euro;</p>
           </div>
         </div>
       </div>

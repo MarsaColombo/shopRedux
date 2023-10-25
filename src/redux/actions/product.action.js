@@ -5,7 +5,7 @@ export const ADD_PRODUCT = "ADD_PRODUCT";
 export const EDIT_PRODUCT = "EDIT_PRODUCT";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
-export const GET_DETAILS = "GET_DETAILS";
+export const SINGLE_PRODUCT = "SINGLE_PRODUCT";
 
 export const getProducts = () => {
   return (dispatch) => {
@@ -41,24 +41,14 @@ export const deleteProduct = (postId) => {
       });
   };
 };
-export const filterProducts = (category) => {
+export const filterProducts = (data) => {
   return (dispatch) => {
-    return axios.get("http://localhost:3000/products").then((res) => {
-      const filteredProducts = res.data.filter((product) =>
-        product.categories.includes(category)
-      );
-
-      dispatch({ type: FILTER_PRODUCTS, payload: filteredProducts });
-    });
+    return dispatch({ type: FILTER_PRODUCTS, payload: data });
   };
 };
 
-export const getDetails = (postId) => {
+export const singleProduct = (productId) => {
   return (dispatch) => {
-    return axios.get(`http://localhost:3000/products/${postId}`).then((res) => {
-      const singleProduct = res.data;
-
-      dispatch({ type: GET_DETAILS, payload: singleProduct });
-    });
+    return dispatch({ type: SINGLE_PRODUCT, payload: productId });
   };
 };
