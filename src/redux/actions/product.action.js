@@ -1,4 +1,3 @@
-import { Category } from "@mui/icons-material";
 import axios from "axios";
 
 export const GET_PRODUCTS = "GET_PRODUCTS";
@@ -6,6 +5,7 @@ export const ADD_PRODUCT = "ADD_PRODUCT";
 export const EDIT_PRODUCT = "EDIT_PRODUCT";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
+export const GET_DETAILS = "GET_DETAILS";
 
 export const getProducts = () => {
   return (dispatch) => {
@@ -49,7 +49,16 @@ export const filterProducts = (category) => {
       );
 
       dispatch({ type: FILTER_PRODUCTS, payload: filteredProducts });
+    });
+  };
+};
 
+export const getDetails = (postId) => {
+  return (dispatch) => {
+    return axios.get(`http://localhost:3000/products/${postId}`).then((res) => {
+      const singleProduct = res.data;
+
+      dispatch({ type: GET_DETAILS, payload: singleProduct });
     });
   };
 };

@@ -7,7 +7,7 @@ import FilteredProducts from "./components/FilteredProducts";
 
 // Router
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-
+import ProductDetails from "./components/ProductDetails";
 // scss
 
 const App = () => {
@@ -39,6 +39,7 @@ const App = () => {
             path="/filteredProducts/:categories"
             element={<FilteredProducts />}
           />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </div>
     </BrowserRouter>

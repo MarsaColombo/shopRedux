@@ -4,10 +4,14 @@ import {
   GET_PRODUCTS,
   DELETE_PRODUCT,
   FILTER_PRODUCTS,
+  GET_DETAILS,
 } from "../actions/product.action";
-const initialState = [];
+const initialState = {
+  products: [],
+  product: [],
+};
 
-export default function productsReducer(state = initialState, action) {
+export function productsReducer(state = initialState.products, action) {
   switch (action.type) {
     case GET_PRODUCTS:
       return action.payload;
@@ -27,6 +31,15 @@ export default function productsReducer(state = initialState, action) {
     case DELETE_PRODUCT:
       return state.filter((product) => product.id !== action.payload);
     case FILTER_PRODUCTS:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+export function productReducer(state = initialState.product, action) {
+  switch (action.type) {
+    case GET_DETAILS:
       return action.payload;
     default:
       return state;
