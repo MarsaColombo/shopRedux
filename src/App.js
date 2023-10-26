@@ -36,10 +36,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={mainPage()} />
           <Route
-            path="/filteredProducts/:categories"
+            path="/filteredProducts/:category"
             element={<FilteredProducts categories={"categories"} />}
           />
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/product/:prodId" element={<ProductDetails />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -53,10 +53,7 @@ const Product = ({ product }) => {
   };
 
   // Filter products
-  const getDetails = () => {
-    dispatch(singleProduct(product.id));
-  };
-  
+
   return (
     // Produi
     <div className=" card h-auto  w-[20rem] sm:w-[15rem] bg-base-100 shadow-xl p-4 border-2">
@@ -136,7 +133,10 @@ const Product = ({ product }) => {
           <span>{product.salePrice}</span>
           <div className="mt-5">
             <Link to={`/product/${product.id}`}>
-              <button className="btn" onClick={() => getDetails()}>
+              <button
+                className="btn"
+                onClick={() => dispatch(singleProduct(product.id))}
+              >
                 Voir
               </button>
             </Link>
