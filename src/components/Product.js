@@ -56,6 +56,7 @@ const Product = ({ product }) => {
   const getDetails = () => {
     dispatch(singleProduct(product.id));
   };
+  
   return (
     // Produi
     <div className=" card h-auto  w-[20rem] sm:w-[15rem] bg-base-100 shadow-xl p-4 border-2">
